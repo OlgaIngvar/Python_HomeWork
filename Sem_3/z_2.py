@@ -8,3 +8,19 @@
 #    1 2 3 4 5
 #    6
 #    -> 5
+
+N = abs(int(input('Введите количество элементов списка А: ')))
+A_enter = input("Введите через пробел элементы списка A: ").split()
+A_num = list(map(int, A_enter))
+if len(A_num) != N or N == 0:
+    print('Количество элементов не соответствуют написанному количеству списка А!')
+else:
+    X = int(input('Введите число X, с которым необходимо сравнить элементы списка А: '))
+    min = abs(X - A_num[0])
+    index = 0
+    for i in range(1, N):
+        count = abs(X - A_num[i])
+        if count < min:
+            min = count
+            index = i
+    print(f'Число {A_num[index]} в списке A наиболее близко по величине к числу {X}, их разница равна {abs(X - A_num[index])}')
