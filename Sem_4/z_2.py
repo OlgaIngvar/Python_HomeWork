@@ -13,7 +13,7 @@
 #заданной во входном файле грядки.
 
 n = int(input('Введите количество кустов: '))
-bush = list(map(int, input('Введите урожайность кустов: ').split()))
+bush = list(map(int, input('Введите урожайность кустов через пробел: ').split()))
 max = 0
 for i in range(n):
     sum_bush = sum(bush[i:i+3])
@@ -26,3 +26,4 @@ if bush[0] + bush[1] + bush[-1] > max:
 	max = bush[0] + bush[1] + bush[-1]
         
 print(f'Максимальный урожай: {max}')
+
